@@ -35,6 +35,20 @@ class GitHubRepoResponseModel {
       owner: RepoOwner.fromJson(json['owner'] as Map<String, dynamic>? ?? {}),
     );
   }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'id': id,
+      'name': name,
+      'full_name': fullName,
+      'description': description,
+      'stargazers_count': stargazersCount,
+      'forks_count': forksCount,
+      'updated_at': updatedAt.toIso8601String(),
+      'html_url': htmlUrl,
+      'owner': owner.toJson(),
+    };
+  }
 }
 
 class RepoOwner {
@@ -54,6 +68,14 @@ class RepoOwner {
       avatarUrl: json['avatar_url'] as String? ?? '',
       htmlUrl: json['html_url'] as String? ?? '',
     );
+  }
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'login': login,
+      'avatar_url': avatarUrl,
+      'html_url': htmlUrl,
+    };
   }
 }
 

@@ -42,7 +42,10 @@ class HomeController extends GetxController {
       },
       (data) async {
         repositories.assignAll(data);
-        await _repoBox.put('repos', data);
+        await _repoBox.put(
+          'repos',
+          data.map((repo) => repo.toJson()).toList(),
+        );
         _applySorting();
       },
     );
@@ -54,7 +57,13 @@ class HomeController extends GetxController {
   void _loadCachedRepos() {
     final cached = _repoBox.get('repos') as List<dynamic>?;
     if (cached != null && cached.isNotEmpty) {
-      repositories.assignAll(cached.cast<GitHubRepoResponseModel>());
+      final parsed = cached
+          .whereType<Map>()
+          .map((map) => GitHubRepoResponseModel.fromJson(
+                Map<String, dynamic>.from(map),
+              ))
+          .toList();
+      repositories.assignAll(parsed);
       _applySorting();
     }
   }
