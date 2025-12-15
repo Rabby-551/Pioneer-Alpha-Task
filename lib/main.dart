@@ -29,10 +29,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Pioneer Alpha Ltd',
+      title: 'Pioneer Alpha Task',
       navigatorKey: navigatorKey,
-      theme: AppTheme().lightTheme,
-      darkTheme: AppTheme().darkTheme,
       themeMode: ThemeMode.dark,
       home: const HomeScreen(),
     );
