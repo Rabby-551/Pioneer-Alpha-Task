@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:pioneer_alpha_ltd_task/feature/home/controller/home_controller.dart';
+import 'package:pioneer_alpha_ltd_task/feature/home/model/github_repo_response_model.dart';
 
 import 'package:pioneer_alpha_ltd_task/feature/home/presentation/screen/repo_detail_screen.dart';
 

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:pioneer_alpha_ltd_task/core/di/controller_dependency_injection.dart';
+import 'package:pioneer_alpha_ltd_task/core/di/interface_dependency_injection.dart';
+import 'package:pioneer_alpha_ltd_task/feature/home/presentation/screen/home_screen.dart';
 
 GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
@@ -20,6 +23,9 @@ Future<void> main() async {
   initControllers();
 
   runApp(const MyApp());
+}
+
+void externalServiceDI() {
 }
 
 class MyApp extends StatelessWidget {
