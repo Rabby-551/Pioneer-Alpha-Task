@@ -30,12 +30,18 @@ class GitHubRepoAdapter extends TypeAdapter<GitHubRepoResponseModel> {
     
   }
 
-  @override
 
-  int get typeId => throw UnimplementedError();
-
-  @override
+    @override
   void write(BinaryWriter writer, GitHubRepoResponseModel obj) {
-    
+    writer
+      ..writeInt(obj.id)
+      ..writeString(obj.name)
+      ..writeString(obj.fullName)
+      ..writeString(obj.description)
+      ..writeInt(obj.stargazersCount)
+      ..writeInt(obj.forksCount)
+      ..writeInt(obj.updatedAt.millisecondsSinceEpoch)
+      ..writeString(obj.htmlUrl)
+      ..write(obj.owner);
   }
 }
