@@ -71,18 +71,23 @@ class RepoOwnerAdapter extends TypeAdapter<RepoOwner> {
 }
 
 class SortPreferenceAdapter extends TypeAdapter<SortPreference> {
+
+  @override
+  final int typeId = 2;
+
   @override
   SortPreference read(BinaryReader reader) {
-    // TODO: implement read
-    throw UnimplementedError();
+    final fieldIndex = reader.readInt();
+    final ascending = reader.readBool();
+    final field = SortField.values[fieldIndex];
+    return SortPreference(field: field, ascending: ascending);
   }
 
-  @override
-  // TODO: implement typeId
-  int get typeId => throw UnimplementedError();
 
-  @override
+ @override
   void write(BinaryWriter writer, SortPreference obj) {
-    // TODO: implement write
+    writer
+      ..writeInt(obj.field.index)
+      ..writeBool(obj.ascending);
   }
 }
