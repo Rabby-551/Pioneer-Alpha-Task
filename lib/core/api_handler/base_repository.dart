@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:pioneer_alpha_ltd_task/core/api_handler/exceptions_handler.dart';
 
 import '../services/debug/debug_service.dart';
 import 'failure.dart';
