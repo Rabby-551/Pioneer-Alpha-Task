@@ -45,3 +45,20 @@ class GitHubRepoAdapter extends TypeAdapter<GitHubRepoResponseModel> {
       ..write(obj.owner);
   }
 }
+
+class RepoOwnerAdapter extends TypeAdapter<RepoOwner> {
+  @override
+  RepoOwner read(BinaryReader reader) {
+    // TODO: implement read
+    throw UnimplementedError();
+  }
+
+  @override
+  // TODO: implement typeId
+  int get typeId => throw UnimplementedError();
+
+  @override
+  void write(BinaryWriter writer, RepoOwner obj) {
+    // TODO: implement write
+  }
+}
