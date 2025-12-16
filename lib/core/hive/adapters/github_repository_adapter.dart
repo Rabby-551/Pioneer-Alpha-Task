@@ -69,3 +69,20 @@ class RepoOwnerAdapter extends TypeAdapter<RepoOwner> {
       ..writeString(obj.htmlUrl);
   }
 }
+
+class SortPreferenceAdapter extends TypeAdapter<SortPreference> {
+  @override
+  SortPreference read(BinaryReader reader) {
+    // TODO: implement read
+    throw UnimplementedError();
+  }
+
+  @override
+  // TODO: implement typeId
+  int get typeId => throw UnimplementedError();
+
+  @override
+  void write(BinaryWriter writer, SortPreference obj) {
+    // TODO: implement write
+  }
+}
