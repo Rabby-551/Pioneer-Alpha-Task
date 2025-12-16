@@ -5,7 +5,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
 import '../services/debug/debug_service.dart';
-import 'exceptions.dart';
 import 'failure.dart';
 
 base class BaseRepository {
